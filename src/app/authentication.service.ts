@@ -30,7 +30,7 @@ export class AuthenticationService {
 
   public addnewpost(post){
      post.email=this.getUserDetails()['identity'].email
-    const base = this.http.post('http://localhost:5000/post/new', post)
+    const base = this.http.post('http://0.0.0.0:5000/post/new', post)
     return base
 
   }
@@ -53,7 +53,7 @@ export class AuthenticationService {
 
   }
   public getPosts() {
-    return this.http.get<Posts>('http://localhost:5000');
+    return this.http.get<Posts>('http://0.0.0.0:5000');
   }
 
 
@@ -69,7 +69,7 @@ export class AuthenticationService {
 
   public register(user: TokenPayload): Observable<any> {
 
-    const base = this.http.post('http://localhost:5000/register', user)
+    const base = this.http.post('http://0.0.0.0:5000/register', user)
 
     const request = base.pipe(
       map((data: TokenResponse) => {
@@ -86,7 +86,7 @@ export class AuthenticationService {
   }
 
   public login(user: TokenPayload): Observable<any> {
-    const base = this.http.post('http://localhost:5000/login', user)
+    const base = this.http.post('http://0.0.0.0:5000/login', user)
     // console.log(base)
     const request = base.pipe(
       map((data: TokenResponse) => {
@@ -102,7 +102,7 @@ export class AuthenticationService {
   }
 
   public getPostById(id){
-    return this.http.get<any>('http://localhost:5000/post/'+id);
+    return this.http.get<any>('http://0.0.0.0:5000/post/'+id);
   }
 
   public logout(): void {
