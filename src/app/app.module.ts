@@ -1,18 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
-import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms'
-import { RouterModule, Routes } from '@angular/router'
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from './app.component'
-import { ProfileComponent } from './profile/profile.component'
-import { LoginComponent } from './login/login.component'
-import { RegisterComponent } from './register/register.component'
-import { HomeComponent } from './home/home.component'
-import { AuthenticationService } from './authentication.service'
+import { AppComponent } from './app.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { AuthenticationService } from './authentication.service';
 import { AuthGuardService } from './auth-guard.service';
 import { NewpostComponent } from './newpost/newpost.component';
-import { OnepostComponent } from './onepost/onepost.component'
+import { OnepostComponent } from './onepost/onepost.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -22,9 +23,10 @@ const routes: Routes = [
     component: ProfileComponent,
     canActivate: [AuthGuardService]
   },
-  {path :'new', component:NewpostComponent},
-  {path:'post/:id', component:OnepostComponent,canActivate:[AuthGuardService]}
-]
+  {path : 'new', component: NewpostComponent},
+  {path: 'post/:id', component: OnepostComponent, canActivate: [AuthGuardService]},
+  {path: 'reset_password', component: ResetPasswordComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,8 @@ const routes: Routes = [
     RegisterComponent,
     HomeComponent,
     NewpostComponent,
-    OnepostComponent
+    OnepostComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

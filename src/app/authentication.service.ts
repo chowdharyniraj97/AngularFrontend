@@ -110,4 +110,10 @@ export class AuthenticationService {
     window.localStorage.removeItem('usertoken')
     this.router.navigateByUrl('/')
   }
+
+  // tslint:disable-next-line:variable-name
+  public reset(user_email){
+    console.log(user_email)
+    return this.http.post('http://0.0.0.0:5000/reset_password', user_email);
+  }
 }
