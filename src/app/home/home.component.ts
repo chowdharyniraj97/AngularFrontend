@@ -11,7 +11,6 @@ export class HomeComponent implements OnInit {
   constructor(public auth:AuthenticationService) { }
   public getPosts(){
     this.auth.getPosts().subscribe(p => {
-      console.log(p)
       this.post=p
       // this.posts = p["data"];
       // console.log(this.posts)
