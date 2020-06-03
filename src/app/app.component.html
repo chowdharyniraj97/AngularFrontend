@@ -10,11 +10,11 @@
         <a class="nav-link" href="http://localhost/" >Home</a>
       </li>
 
-      <li *ngIf="!auth.isLoggedIn()" class="nav-item">
+      <li *ngIf="!auth.isLoggedIn()" class="nav-item" id="login">
         <a class="nav-link" href="http://localhost/login">Login</a>
       </li>
       <li *ngIf="!auth.isLoggedIn()" class="nav-item">
-  
+
         <a class="nav-link" href="http://localhost/register">Register</a>
       </li>
       <li *ngIf="auth.isLoggedIn()" class="nav-item">
@@ -24,7 +24,7 @@
         <a class="nav-link" href="http://localhost/profile">{{ auth.getUserDetails()?.identity.username }}</a>
       </li>
       <li *ngIf="auth.isLoggedIn()" class="nav-item">
-        <a class="nav-link" routerLink="" (click)="auth.logout()">Logout</a>
+        <a class="nav-link" id="logout" routerLink="" (click)="auth.logout()">Logout</a>
       </li>
     </ul>
   </div>

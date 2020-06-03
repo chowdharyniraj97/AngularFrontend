@@ -12,6 +12,11 @@ export class LoginComponent {
     email: '',
     password: ''
   }
+  dummycredentials:TokenPayload={
+    username: 'abc',
+    email: 'abc@gmail.com',
+    password: '123456'
+  }
 
   constructor(private auth: AuthenticationService, private router: Router) {}
 

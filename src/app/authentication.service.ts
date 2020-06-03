@@ -47,7 +47,7 @@ export class AuthenticationService {
 
     }
     else {
-      return null
+      return null;
     }
 
 
@@ -58,12 +58,12 @@ export class AuthenticationService {
 
 
   public isLoggedIn(): boolean {
-    const user = this.getUserDetails()
+    const user = this.getUserDetails();
     if (user) {
       return user.exp >
-        Date.now() / 1000
+        Date.now() / 1000;
     } else {
-      return false
+      return false;
     }
   }
 

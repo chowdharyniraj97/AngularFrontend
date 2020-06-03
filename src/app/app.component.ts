@@ -9,8 +9,9 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+  title='client';
   constructor(private router: Router,public auth :AuthenticationService) { }
 
-  
- 
+
+
 }
