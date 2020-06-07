@@ -23,9 +23,10 @@ export class OnepostComponent implements OnInit {
   getPost(){
     this.auth.getPostById(this.id)
     .subscribe((data)=>{
-      this.post=data
-      console.log(this.post)
-      console.log(this.post.message['content'])
+      this.post=data['post']
+      // console.log(this.post)
+      // console.log(this.post.title)
+      // console.log(this.post.message['content'])
     })
       
   }

@@ -22,11 +22,16 @@ export class LoginComponent {
 
   login() {
     this.auth.login(this.credentials).subscribe(
-      () => {
+      (data) => {
+        console.log(data)
+        if(data['token'])
         this.router.navigateByUrl('/')
+        else
+        window.alert("invalid username or password")
       },
-      err => {
-        console.error(err)
+      (err) => {
+        console.log(err)
+        window.alert("invalid username or password")
       }
     )
   }
