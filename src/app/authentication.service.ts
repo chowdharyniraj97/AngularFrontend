@@ -116,4 +116,8 @@ export class AuthenticationService {
     console.log(user_email)
     return this.http.post('/api/reset_password', user_email);
   }
+
+  public updatePost(id,data){
+    return this.http.post('/api/post/'+id+'/update',data)
+  }
 }

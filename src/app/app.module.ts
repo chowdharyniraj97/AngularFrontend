@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,6 +14,8 @@ import { AuthGuardService } from './auth-guard.service';
 import { NewpostComponent } from './newpost/newpost.component';
 import { OnepostComponent } from './onepost/onepost.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { UpdateComponent } from './update/update.component';
+import { combineAll } from 'rxjs/operators';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -25,7 +27,8 @@ const routes: Routes = [
   },
   {path : 'new', component: NewpostComponent},
   {path: 'post/:id', component: OnepostComponent, canActivate: [AuthGuardService]},
-  {path: 'reset_password', component: ResetPasswordComponent}
+  {path: 'reset_password', component: ResetPasswordComponent},
+  {path:'post/:id/update', component: UpdateComponent}
 ];
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ const routes: Routes = [
     HomeComponent,
     NewpostComponent,
     OnepostComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
