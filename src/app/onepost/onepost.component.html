@@ -4,7 +4,7 @@
         <div class="media-body">
           <div class="article-metadata">
            <span><a class="mr-2" href="post/{{post.id}}/update">Update</a></span> 
-           <span><a class="mr-2" href="#">Delete</a></span> 
+           <span><a class="mr-2" role='button' (click)="deletePost()">Delete</a></span> 
             <!-- <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small> -->
           </div>
           <h2 class="article-title">{{ post['title'] }}</h2>

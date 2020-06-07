@@ -9,7 +9,7 @@ import { AuthenticationService } from '../authentication.service'
 export class OnepostComponent implements OnInit {
   id:number
   post
-  constructor(private auth:AuthenticationService,public route:ActivatedRoute) { }
+  constructor(private auth:AuthenticationService,public route:ActivatedRoute,private redirect: Router) { }
 
   ngOnInit(): void {
     console.log(this.route.snapshot.paramMap)
@@ -28,7 +28,16 @@ export class OnepostComponent implements OnInit {
       // console.log(this.post.title)
       // console.log(this.post.message['content'])
     })
-      
+    
+  
+  }
+
+  deletePost(){
+      this.auth.deletePost(this.id)
+      .subscribe(data=>{
+        window.alert("post deleted")
+        this.redirect.navigateByUrl('/')
+      })
   }
 
 

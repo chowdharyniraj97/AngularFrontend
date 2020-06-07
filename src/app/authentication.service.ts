@@ -120,4 +120,9 @@ export class AuthenticationService {
   public updatePost(id,data){
     return this.http.post('/api/post/'+id+'/update',data)
   }
+
+  public deletePost(id){
+    const data={}
+    return this.http.post('/api/post/'+id+'/delete',data)
+  }
 }
