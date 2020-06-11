@@ -16,6 +16,7 @@ import { OnepostComponent } from './onepost/onepost.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { UpdateComponent } from './update/update.component';
 import { combineAll } from 'rxjs/operators';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path : 'new', component: NewpostComponent},
   {path: 'post/:id', component: OnepostComponent, canActivate: [AuthGuardService]},
   {path: 'reset_password', component: ResetPasswordComponent},
-  {path:'post/:id/update', component: UpdateComponent}
+  {path:'post/:id/update', component: UpdateComponent},
+  {path:'change_password/:email',component: ChangepasswordComponent}
 ];
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ const routes: Routes = [
     NewpostComponent,
     OnepostComponent,
     ResetPasswordComponent,
-    UpdateComponent
+    UpdateComponent,
+    ChangepasswordComponent
   ],
   imports: [
     BrowserModule,

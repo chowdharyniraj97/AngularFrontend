@@ -117,6 +117,18 @@ export class AuthenticationService {
     return this.http.post('/api/reset_password', user_email);
   }
 
+  public change(user_password: string,email:string){
+    // console.log(user_email)
+
+    const user_data={
+      'email': email,
+      'password': user_password
+    };
+
+
+    return this.http.post('/api/change_password', user_data);
+  }
+
   public updatePost(id,data){
     return this.http.post('/api/post/'+id+'/update',data)
   }
